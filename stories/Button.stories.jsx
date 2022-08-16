@@ -35,12 +35,18 @@ Ghost.args = {
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'sm',
+  size: 'lg',
+  children: 'Button',
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+  size: 'md',
   children: 'Button',
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'lg',
+  size: 'sm',
   children: 'Button',
 };
