@@ -1,15 +1,20 @@
 import React from 'react';
-import { IconButton, HStack, Box, Stack } from '@chakra-ui/react';
+import { IconButton, HStack, Box, Text } from '@chakra-ui/react';
 
-export const NumberInput = () => {
+type NumberInput = {
+  initialValue?: number;
+};
+
+export const NumberInput = ({ initialValue = 0 }) => {
   return (
-    <Stack isInline>
+    <HStack>
       <Box>
         <IconButton aria-label="decrement" variant="outline" rounded="full" height="40px" width="40px" size="md" />
       </Box>
+      <Text>{initialValue}</Text>
       <Box>
         <IconButton aria-label="indecrement" variant="outline" rounded="full" height="40px" width="40px" size="md" />
       </Box>
-    </Stack>
+    </HStack>
   );
 };
