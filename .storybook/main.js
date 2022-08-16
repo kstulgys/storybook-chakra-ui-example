@@ -1,19 +1,14 @@
 module.exports = {
   stories: ['../stories/**/*.stories.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions', '@chakra-ui/storybook-addon'],
+  framework: '@storybook/react',
   features: {
-    emotionAlias: false,
+    storyStoreV7: true,
   },
   core: {
-    builder: '@storybook/builder-vite', // 👈 The builder enabled here.
+    builder: 'webpack5',
   },
-  async viteFinal(config) {
-    return {
-      ...config,
-      define: {
-        ...config.define,
-        global: 'window',
-      },
-    };
+  features: {
+    emotionAlias: false,
   },
 };
